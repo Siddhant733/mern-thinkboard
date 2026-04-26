@@ -25,6 +25,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// ✅ Root route fix
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 // Routes
 app.use("/api/notes", notesRoutes);
 
